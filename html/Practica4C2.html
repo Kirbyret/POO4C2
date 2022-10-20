@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica P004</title>
+    <script src="/js/appP4.js"></script>
+</head>
+<body>
+    <header>
+    <h1>Funciones y Arrays en JavaScript</h1>
+    </header>
+
+    <section>
+        <p id="VPro"></p>
+        <p id="VPar"></p>
+        <p id="VOMay"></p>
+
+        <div>
+            <h3 class="Titulo-secundario">Generación de Numeros aleatorios entre 1-50</h3>
+
+            <label>Cantidad de Numeros aleatorios a generar</label>
+            <input type="text" id="limite" name="limite" required="true" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+            <button id="btnLlenar" onclick="llenar(), validar()">Llenar con Números Aleatorios</button>
+
+            <select name="numeros" id="numeros"></select>
+        </div>
+    </section>
+    
+    <footer>
+        <h3>Paola Emiret Valdez Martinez 7-2 2022</h3>
+    </footer>
+    
+
+</body>
+<script>
+    prom = document.getElementById('VPro');
+    par = document.getElementById('VPar');
+    ordenadoMayor = document.getElementById('VOMay');
+
+    prom.innerHTML = "El promedio de las calificaciones es de: " + valorPromedio(calificaciones);
+    par.innerHTML = "La cantidad de números pares es de: " + valorPares(numeros);
+    ordenadoMayor.innerHTML = "Los valores ordenados de mayor a menor son: <br>" + valorOrdenadosMayor (numerosDesordenados);
+</script>
+</html>
