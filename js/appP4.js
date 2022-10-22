@@ -77,7 +77,7 @@ function validar(){
     validarLimite = document.querySelector('#limite').value;
 
     if(validarLimite == 0){
-        alert('Por favor, Capture un valor');
+        alert('Capture un valor');
     }
 }
 
@@ -98,7 +98,3 @@ function ordenarValoresSelect(numeros){
     }
     return arr;
 }
-
-// Hacer Commit 'Generación de numeros aleatorios
-// Hacer Commit 'Validación de caja de texto (limite) REQUERIDO Y NUMERICO
-// Hacer Commit con la listanumeros ORDENADOS ASCENDENTE
