@@ -8,7 +8,8 @@ function valorPromedio(calificaciones){
 }
 
 // Declaración del arreglo de 20 posiciones para las calificaciones
-let calificaciones = [7, 2, 5, 10, 10, 9, 9, 8, 8, 7, 9, 10, 10, 10, 8, 6, 5, 7, 9, 8];
+let calificaciones = [8, 6, 9, 6, 9, 8, 8, 5, 7, 10, 8, 7, 10, 10, 8, 6, 7, 8, 7, 10, 8];
+// llamar a la función del valor Promedio y mandar el resultado por consola
 console.log("El promedio de las calificaciones es de: " + valorPromedio(calificaciones));
 
 // Función para calcular la cantidad de numeros pares
@@ -23,7 +24,7 @@ function valorPares(numeros){
 }
 
 // Declaración del arreglo de 20 posiciones para los numeros que luego serán contabilizado en pares
-let numeros = [54 , 61 , 71 , 21 , 52 , 34 , 48 , 49 , 27 , 68 , 73 , 32 , 96 , 89 , 70 , 47 , 24 , 5 , 7 , 45];
+let numeros = [12, 34, 21, 73, 23, 2, 24, 93, 25, 54, 66, 69, 8, 51, 98, 56, 44, 82, 29, 78];
 console.log("La cantidad de números pares es de: " + valorPares(numeros));
 
 // Función para ordenar los valores del arreglo de mayor a menor
@@ -45,8 +46,9 @@ function valorOrdenadosMayor(numerosDesordenados){
 }
 
 
-// Declaración del arreglo donde los numeros están desordenados
-let numerosDesordenados = [88, 12, 97, 94, 9, 28, 38, 72, 40, 100, 17, 88, 11, 86, 8, 21, 82, 75, 83, 40];
+// Declaración del arreglo de 20 posiciones donde los numeros están desordenados
+let numerosDesordenados = [12, 25, 65, 43, 98, 42, 2, 54, 66, 442, 53, 532,18, 86, 3, 35, 60, 31, 24, 6];
+// llamar a la función y mandar resultado por la consola
 console.log("Los valores ordenados de mayor a menor son: " + valorOrdenadosMayor(numerosDesordenados));
 
 
@@ -54,6 +56,8 @@ function llenar(){
     var limite = document.getElementById('limite').value;
     var listanumeros = document.getElementById('numeros');
     var arreglo = [];
+
+    // Limpiar las opciones del select
     while(listanumeros.options.length>0){
         listanumeros.remove(0);
     }
@@ -98,3 +102,9 @@ function ordenarValoresSelect(numeros){
     }
     return arr;
 }
+
+// Hacer Commit 'Generación de numeros aleatorios
+// Hacer Commit 'Validación de caja de texto (limite) REQUERIDO Y NUMERICO
+// Hacer Commit con la listanumeros ORDENADOS ASCENDENTE
+// Contar los numeros pares e impares para saber su porcentaje
+// La diferencia no sea mayor al 25%

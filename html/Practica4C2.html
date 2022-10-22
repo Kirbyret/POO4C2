@@ -19,7 +19,7 @@
         <p id="valOrdMay"></p>
 
         <div>
-            <h3 class="Titulo-secundario">Generación de Numeros aleatorios entre 1-50</h3>
+            <h3 class="Titulo">Generación de Numeros aleatorios entre 1-50</h3>
 
             <label>Cantidad de Numeros aleatorios a generar</label>
             <input type="text" id="limite" name="limite" required="true" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
@@ -28,9 +28,22 @@
             <select name="numeros" id="numeros"></select>
         </div>
     </section>
+    <hr>
+
+    <br>
+    <label for="">Porcentaje de Pares</label>
+    <br>
+    <label for="porPares"></label>
+    <br>
+    <label for="">Porcentaje de Impares</label>
+    <br>
+    <label for="porImpares"></label>
+
+    <label id="EsSimetrico" for=""></label>
+
 
     <footer>
-        <h4>Paola Emiret Valdez Martinez 7-2 2022</h4>
+        <h4>Paola Emiret Valdez Martinez 7-2</h4>
     </footer>
 </body>
 
@@ -42,7 +55,6 @@
     prom.innerHTML = "El promedio de las calificaciones es de: " + valorPromedio(calificaciones);
     par.innerHTML = "La cantidad de números pares es de: " + valorPares(numeros);
     ordenadoMayor.innerHTML = "Los valores ordenados de mayor a menor son: <br>" + valorOrdenadosMayor (numerosDesordenados);
-    
 </script>
 
 </html>
