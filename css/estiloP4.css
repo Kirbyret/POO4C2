@@ -17,6 +17,10 @@ header{
     padding: 0;
     background-color: #731fd9;
 }
+.Tablas{
+    font-family: Arial, Helvetica, sans-serif;
+    table-layout: border="1";
+}
 
 @media screen and (max-width: 700px){
     body, .numerosA, header{
