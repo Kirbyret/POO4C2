@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #234fd4cc;
+}
+header{
+    padding: 50px;
+    background-color: #ed763a;
+}
+.numerosA{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #731fd9;
+}
+
+@media screen and (max-width: 700px){
+    body, .numerosA, header{
+        flex-direction: column;
+    }
+}

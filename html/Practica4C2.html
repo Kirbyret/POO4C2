@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funciones y Arrays en JavaScript</title>
-    <link rel="stylesheet" href="/css/estilos.css">
-    <script src="/js/app.js"></script>
+    <link rel="stylesheet" href="/css/estiloP4.css">
+    <script src="/js/appP4.js"></script>
 </head>
 <body>
     <header>
-        <h1>Funciones y Arrays en JavaScript</h1>
+        <center><h1>Funciones y Arrays en JavaScript</h1></center>
     </header>
 
     <section>
@@ -18,7 +18,9 @@
         <p id="valPar"></p>
         <p id="valOrdMay"></p>
 
-        <div>
+        <div class="numerosA">
+            <hr>
+            <center>
             <h3 class="Titulo">Generación de Numeros aleatorios entre 1-50</h3>
 
             <label>Cantidad de Numeros aleatorios a generar</label>
@@ -26,6 +28,7 @@
             <button id="btnLlenar" onclick="llenar(), validar()">Llenar con Números Aleatorios</button>
 
             <select name="numeros" id="numeros"></select>
+            </center>
         </div>
     </section>
     <hr>
@@ -43,7 +46,9 @@
 
 
     <footer>
-        <h4>Paola Emiret Valdez Martinez 7-2</h4>
+        <center>
+        <h5>Paola Emiret Valdez Martinez 7-2</h5>
+        </center>
     </footer>
 </body>
 
@@ -51,7 +56,7 @@
     prom = document.getElementById('valProm');
     par = document.getElementById('valPar');
     ordenadoMayor = document.getElementById('valOrdMay');
-
+    
     prom.innerHTML = "El promedio de las calificaciones es de: " + valorPromedio(calificaciones);
     par.innerHTML = "La cantidad de números pares es de: " + valorPares(numeros);
     ordenadoMayor.innerHTML = "Los valores ordenados de mayor a menor son: <br>" + valorOrdenadosMayor (numerosDesordenados);
