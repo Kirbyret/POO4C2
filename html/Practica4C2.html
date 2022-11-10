@@ -3,61 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funciones y Arrays en JavaScript</title>
+    <meta name="viewport" content="width=}, initial-scale=1.0">
+    <title>Arreglos</title>
     <link rel="stylesheet" href="/css/estiloP4.css">
-    <script src="/js/appP4.js"></script>
+    <script src="/js/appP4.js" ></script>
+
 </head>
 <body>
+    <center>
     <header>
-        <center><h1>Funciones y Arrays en JavaScript</h1></center>
+        <h1>Arreglos</h1>
     </header>
-
-    <section>
-        <p id="valProm"></p>
-        <p id="valPar"></p>
-        <p id="valOrdMay"></p>
-
-        <div class="numerosA">
-            <hr>
-            <center>
-            <h3 class="Titulo">Generación de Numeros aleatorios entre 1-50</h3>
-
-            <label>Cantidad de Numeros aleatorios a generar</label>
-            <input type="text" id="limite" name="limite" required="true" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-            <button id="btnLlenar" onclick="llenar(), validar()">Llenar con Números Aleatorios</button>
-
-            <select name="numeros" id="numeros"></select>
-            </center>
+    <h2>
+        Generacion de numeros aleatorios entre 1-50.
+    </h2>
+    <div id="contenido">
+        <label class="letras" for="">Cantidad de numeros aleatorios a generar:</label>
+        <input type="number" id="limite" name="limite">
+        <label id="errorLimite" for="" style="color:red;visibility: hidden;">*</label>
+        <br>
+        <br>
+        <div id="botones">
+            <button id="btnLlenar" onclick="limpiar();numAleatorio()">Llenar con numeros aleatorios</button>
         </div>
-    </section>
-    <hr>
+        <br>
+        <select name="numeros" id="numeros"></select>
+        <br>
+        
+        <br>
+        <label class="letras" for="">Porcentaje de Pares: </label>
+        <br>
+        <label id="porPares" for=""></label>
+        
+        <br>
+        <br>
+        <label class="letras" for="">Porcentaje de Impares: </label>
+        <br>
+        <label id="porImpares" for=""></label>
 
-    <br>
-    <label for="">Porcentaje de Pares</label>
-    <br>
-    <label for="porPares"></label>
-    <br>
-    <label for="">Porcentaje de Impares</label>
-    <br>
-    <label for="porImpares"></label>
+        <br>
+        <br>
+        <label class="letras" id="EsSimetrico" for=""></label>
 
-    <label id="EsSimetrico" for=""></label>
+    </div>
+    <script>
+        const btnLlenar = document.querySelector("#btnLlenar")
+            btnLlenar.addEventListener('click',()=>{
 
+                limite = document.querySelector("#limite").value;
+                errorLimite = document.querySelector("#errorLimite");
+                limite=="" ? errorLimite.style.visibility = 'visible' : errorLimite.style.visibility = 'hidden'
 
-    <footer>
-        <center>
-        <h5>Paola Emiret Valdez Martinez 7-2</h5>
-        </center>
+                if(limite==0 || limite>50 || limite<1 || limite==""){
+                    
+                    limite=="" || limite==0 || limite>50 || limite<1 ? errorLimite.style.visibility = 'visible' : errorLimite.style.visibility = 'hidden';
+                    
+                    
+                }else {
+
+                }
+            })
+    </script>
+    <footer >
+        <h3>Paola Emiret Valdez Martinez</h3>
     </footer>
-</body>
-<script class="Tablas">
-    prom = document.getElementById('valProm');
-    par = document.getElementById('valPar');
-    ordenadoMayor = document.getElementById('valOrdMay');
-    
-    prom.innerHTML = "El promedio de las calificaciones es de: " + valorPromedio(calificaciones);
-    par.innerHTML = "La cantidad de números pares es de: " + valorPares(numeros);
-    ordenadoMayor.innerHTML = "Los valores ordenados de mayor a menor son: <br>" + valorOrdenadosMayor (numerosDesordenados);
-</script>
+    </center>
+</script></body>
 </html>

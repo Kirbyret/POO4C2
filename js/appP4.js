@@ -1,110 +1,162 @@
-// Función para sacar el promedio
-function valorPromedio(calificaciones){
-    let suma = 0, longitudCalif = calificaciones.length;
-    for(let i=0; i<longitudCalif; i++){
-        suma = suma + calificaciones[i];
-    }
-    return suma / longitudCalif;
-}
-
-// Declaración del arreglo de 20 posiciones para las calificaciones
-let calificaciones = [8, 6, 9, 6, 9, 8, 8, 5, 7, 10, 8, 7, 10, 10, 8, 6, 7, 8, 7, 10, 8];
-// llamar a la función del valor Promedio y mandar el resultado por consola
-console.log("El promedio de las calificaciones es de: " + valorPromedio(calificaciones));
-
-// Función para calcular la cantidad de numeros pares
-function valorPares(numeros){
-    let contador = 0, longitudNum = numeros.length;
-    for(let i=0; i<longitudNum; i++){
-        if(numeros[i]%2 == 0){
-            contador++;
-        }
-    }
-    return contador;
-}
-
-// Declaración del arreglo de 20 posiciones para los numeros que luego serán contabilizado en pares
-let numeros = [12, 34, 21, 73, 23, 2, 24, 93, 25, 54, 66, 69, 8, 51, 98, 56, 44, 82, 29, 78];
-console.log("La cantidad de números pares es de: " + valorPares(numeros));
-
-// Función para ordenar los valores del arreglo de mayor a menor
-function valorOrdenadosMayor(numerosDesordenados){
-    let aux, longitudOrdenMayor = numerosDesordenados.length;
-    let band = false;
-    while(!band){
-        band = true;
-        for(let i=0; i<longitudOrdenMayor; i++){
-            if(numerosDesordenados[i+1] > numerosDesordenados[i]){
-                aux = numerosDesordenados[i];
-                numerosDesordenados [i] = numerosDesordenados [i+1];
-                numerosDesordenados[i+1] = aux;
-                band = false;
-            }
-        }
-    }    
-    return numerosDesordenados;
-}
-
-
-// Declaración del arreglo de 20 posiciones donde los numeros están desordenados
-let numerosDesordenados = [12, 25, 65, 43, 98, 42, 2, 54, 66, 442, 53, 532,18, 86, 3, 35, 60, 31, 24, 6];
-// llamar a la función y mandar resultado por la consola
-console.log("Los valores ordenados de mayor a menor son: " + valorOrdenadosMayor(numerosDesordenados));
-
-
-function llenar(){
-    var limite = document.getElementById('limite').value;
-    var listanumeros = document.getElementById('numeros');
-    var arreglo = [];
-
-    // Limpiar las opciones del select
-    while(listanumeros.options.length>0){
-        listanumeros.remove(0);
-    }
-
-    for(let con = 0; con<limite; con++){
-
-        let aleatorio = Math.floor(Math.random()*50)+1;
-        listanumeros.options[con] = new Option(aleatorio,'valor:' + con);
-        arreglo[con] = aleatorio;
-    }
-
-    let orden = ordenarValoresSelect(arreglo);
-
-    for(let con = 0; con<limite; con++){
-        listanumeros.options[con] = new Option(orden[con]);
-    }
-
-}
-
-function validar(){
-    validarLimite = document.querySelector('#limite').value;
-
-    if(validarLimite == 0){
-        alert('Capture un valor');
-    }
-}
-
-function ordenarValoresSelect(numeros){
-    let arr = numeros, longitudOrdenMayor = numeros.length;
-    let band = false;
-
-    while(!band){
-        band = true;
-        for(let i=0; i<longitudOrdenMayor; i++){
-            if(arr[i] > arr[i+1]){
-                aux = arr[i+1];
-                arr [i+1] = arr [i];
-                arr[i] = aux;
-                band = false;
-            }
-        }
-    }
-    return arr;
-}
-
 // Hacer Commit 'Generación de numeros aleatorios
 // Hacer Commit 'Validación de caja de texto (limite) REQUERIDO Y NUMERICO
 // Hacer Commit con la listanumeros ORDENADOS ASCENDENTE
 // Contar los numeros pares e impares para saber su porcentaje
 // La diferencia no sea mayor al 25%
+var arreglo = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+console.log("Arreglo: "+arreglo);
+
+//Calcular promedio
+function promedio(arreglo){
+    let suma=0;
+    
+    for (let cons=0 ; cons<20 ; cons++){
+        suma = suma + (arreglo[cons]);
+    }
+
+    suma = suma/20;
+    return suma;
+}
+console.log("El promedio es: " + promedio(arreglo));
+
+
+
+//Imprimir cantidad de pares
+function pares(arreglo){
+    let suma = 0;
+    for (let i = 0; i < 20; i++) {
+        if (arreglo[i] % 2 == 0){
+            suma = (suma + 1); 
+        }
+    }
+
+    return suma;
+}
+console.log("Cantidad de valores pares en el arreglo: "+ pares(arreglo));
+
+
+
+//Arreglo descendente
+function orden(arreglo){
+    let suma = 0;
+    
+    return arreglo.sort(function(a, b) {
+        return b - a;
+    });
+}
+console.log("Orden de mayor a menor: "+orden(arreglo));
+
+function llenar(){
+    var limite = document.getElementById('limite').value;
+    var Listanumeros = document.getElementById('numeros');
+    var myArray = [];
+    let aleatorio;
+
+    for(let i = 1; i <= limite; i++) { 
+        myArray.push(i);
+    }
+    myArray=ascendente(myArray);
+
+    for(let con = 0 ; con < limite ; con++){
+        Listanumeros.options[con] = new Option(myArray[con]);
+
+    }
+
+    
+}
+
+function limpiar(){
+    document.getElementById("numeros").innerHTML = "";
+}
+
+function numAleatorio(){
+    var Listanumeros = new Array();
+    var limite = document.getElementById('limite').value;
+    var numeros = document.getElementById("numeros");
+    
+    //Validar rango de numero adecuado
+    if(limite<1 || limite>50 || limite=="" || limite==0) {
+        alert("Limite minimo o maximo alcanzado");
+        limite=="" || limite==0 || limite>50 || limite<1 ? errorLimite.style.visibility = 'visible' : errorLimite.style.visibility = 'hidden';
+    }
+    else{
+        //Añadir al arreglo
+        Listanumeros.length = limite;
+        for (let i=0; i<Listanumeros.length; i++) {
+            Listanumeros[i] = i+1; 
+        }
+        //Imprimir arreglo dentro del rango
+        for (let i=0; i<Listanumeros.length; i++) {
+            var aux = rango(1,50);
+            if (Listanumeros.indexOf(aux)==-1) {
+                Listanumeros[i] = aux;
+            } 
+        }
+        //Arreglo ordenado
+        Listanumeros = ordenMenMay(Listanumeros);
+
+        //Imprimir arreglo ordenado
+        for (let con=0; con<limite; con++) {
+            numeros.options[con] = new Option(Listanumeros[con]);
+        }
+
+    }
+    //Arreglo dividido en pares e impares
+    paresImpares(Listanumeros);
+    
+}
+
+//Calcular rango
+function rango(min, max) {
+    let a = max - min + 1;
+    let b = Math.random() * a;
+    let res = Math.floor(b) + min;
+    return res;
+}
+
+//Ordenar ascendente
+function ordenMenMay(arreglo){
+    return arreglo.sort(function(a, b){
+        return a-b});
+}
+
+
+function paresImpares(arreglo){
+    var par=0;
+    var imp=0;
+    var porPares=0;
+    var porImpares=0;
+    var dif=0;
+
+    //Calcular pares e impares
+    for(let i= 0; i<arreglo.length; i++){
+        if((arreglo[i] % 2) ==0){
+            par++;
+        }
+        else{
+            imp++;
+        }
+    }
+    
+    //Calcular porcentaje
+    porPares=((par*100)/arreglo.length).toFixed(0);
+    porImpares=((imp*100)/arreglo.length).toFixed(0);
+
+    //Imprimir porcentaje
+    document.getElementById("porPares").innerHTML=porPares+"%";
+    document.getElementById("porImpares").innerHTML=porImpares+"%";
+    
+    //Calcular simetria
+    dif=(porPares-porImpares);
+    if (dif<0) {
+        dif=dif*-1;
+    }
+    if (dif>25) {
+        document.getElementById("EsSimetrico").innerHTML="NO ES SIMETRICO";
+    }
+    else{
+        document.getElementById("EsSimetrico").innerHTML="SI ES SIMETRICO";
+    }
+
+}
